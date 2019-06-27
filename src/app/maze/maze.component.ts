@@ -17,7 +17,7 @@ export class MazeComponent implements OnInit {
   warn_text = "";
   defaultName = "Twilight Sparkle";
   mazeId = "";
-
+  playerName = "";
   mazeToPrint = "";
   moveDescription = "";
   poniesForm = new FormGroup({
@@ -26,6 +26,7 @@ export class MazeComponent implements OnInit {
   maze_height: new FormControl(15),
   maze_diff: new FormControl(0)
 });
+
   constructor(private ponyService:PonyService, private mazeService:MazeService) { }
 
   ngOnInit() {
@@ -36,6 +37,8 @@ export class MazeComponent implements OnInit {
          //this.mazeId.unsubscribe();
 
     }
+
+
 //destroy current mazeId
 newMaze(){
   this.mazeService.newMaze();
@@ -70,34 +73,7 @@ this.mazeService.nextMazeMove(directionObj).subscribe(data=>{
 });
 
 }
-onKeydown(event){
 
-  switch(event.key) {
-   case "ArrowUp": {
-      //statements;
-      console.log("north");
-      return "north"
-      break;
-   }
-   case "ArrowDown": {
-      //statements;
-      return "south"
-      break;
-   }
-   case "ArrowLeft": {
-      //statements;
-      return "west"
-      break;
-   }
-    case "ArrowRight": {
-         //statements;
-         return "west"
-         break;
-      }
-
-}
-
-}
 //create new maze
 createMaze(maze){
     this.mazeService.createMaze(maze).subscribe(data=>{
