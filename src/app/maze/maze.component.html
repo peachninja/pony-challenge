@@ -30,30 +30,45 @@
   <div class="d-flex justify-content-center">
       <button type="button" name="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" >New maze</button>
   </div>
-<div class="">
-  <h4 class="d-flex justify-content-center" style="margin-bottom:15px">Directions to move</h4>
-  <div class="d-flex justify-content-center" style="margin-bottom:5px">
-      <button type="button" name="button" class="btn btn-primary" (click)="goThisDirection('north')">Go North</button>
+  <div class="col-12">
+    <h2>{{warn_text}}</h2>
+    <div class="json-content" hljs>
+      <p>'P' = Pony, 'E' = Exit and 'D' = Domokun</p>
+    <h4>{{moveDescription}}</h4>
+  </div>
+<div class="row">
+  <div class="col-lg-9">
+    <pre>
+      {{mazeToPrint}}
+    </pre>
+  </div>
+  <div class="col-lg-3 col-xs-12">
+    <h4 class="d-flex justify-content-center" style="margin-bottom:15px">Directions to move</h4>
+    <div class="d-flex justify-content-center" style="margin-bottom:5px">
+        <button type="button" name="button" class="btn btn-primary" (click)="goThisDirection('north')">Go North</button>
+    </div>
+
+    <div class="d-flex justify-content-center" style="margin-bottom:5px">
+        <button type="button" name="button" class="btn btn-primary"  (click)="goThisDirection('west')" style="margin-right:10px" >Go West</button>
+        <button type="button" name="button" class="btn btn-primary"  (click)="goThisDirection('east')">Go East</button>
+    </div>
+    <div class="d-flex justify-content-center" style="margin-bottom:15px">
+        <button type="button" name="button" class="btn btn-primary"  (click)="goThisDirection('south')" >Go South</button>
+    </div>
   </div>
 
-  <div class="d-flex justify-content-center" style="margin-bottom:5px">
-      <button type="button" name="button" class="btn btn-primary"  (click)="goThisDirection('west')" style="margin-right:10px" >Go West</button>
-      <button type="button" name="button" class="btn btn-primary"  (click)="goThisDirection('east')">Go East</button>
+
+
+
   </div>
-  <div class="d-flex justify-content-center" style="margin-bottom:15px">
-      <button type="button" name="button" class="btn btn-primary"  (click)="goThisDirection('south')" >Go South</button>
-  </div>
+
+
+
+
 </div>
-  <h2>{{warn_text}}</h2>
-  <div class="json-content" hljs>
-    <p>'P' = Pony, 'E' = Exit and 'D' = Domokun</p>
-  <h4>{{moveDescription}}</h4>
-  <pre>
-    {{mazeToPrint}}
-  </pre>
-  </div>
 
-  </div>
+
+</div>
 </div>
 <div class="modal" tabindex="-1" role="dialog" id="myModal">
   <div class="modal-dialog" role="document">
