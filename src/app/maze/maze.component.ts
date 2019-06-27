@@ -84,6 +84,7 @@ createMaze(maze){
         console.log(this.mazeId);
         this.printMaze(sessionStorage.getItem('currentMaze'));
     });
+  this.playerName = this.poniesForm.value.player_name;
 
 }
 
